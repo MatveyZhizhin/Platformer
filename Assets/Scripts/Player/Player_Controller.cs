@@ -8,8 +8,10 @@ namespace Assets.Scripts.Player
         [SerializeField] private float speed;
         [SerializeField] private float rayDistance;
         [SerializeField] private float jumpForce;
-
+        [SerializeField] private float strongImpulse = 6000;
         [SerializeField] private LayerMask whatIsGround;
+
+        private bool _lockDash = false;
 
         private Rigidbody2D playerRigidbody;
 
@@ -20,6 +22,8 @@ namespace Assets.Scripts.Player
         private void Update()
         {
             Jump();
+            Dash();
+            
         }
 
         private void FixedUpdate()
@@ -66,6 +70,32 @@ namespace Assets.Scripts.Player
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawRay(transform.position, Vector2.down * rayDistance);
+        }
+
+        private void Dash()
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift) && !_lockDash)
+            {
+                _lockDash = true;
+                Invoke("LockDash", 2f);
+                
+                playerRigidbody.velocity = new Vector2(0,0);
+
+                if (playerRigidbody.transform.localScale.x < 0)
+                {
+                    playerRigidbody.AddForce(Vector2.left * strongImpulse);
+                }
+                else
+                {
+                    playerRigidbody.AddForce(Vector2.right * strongImpulse);
+                }
+            }
+            
+        }
+
+        private void LockDash()
+        {
+            _lockDash = false;
         }
     }
 }
