@@ -16,9 +16,13 @@ namespace Assets.Scripts.Player
         private Rigidbody2D playerRigidbody;
 
         private bool facingRight = true;
+        private SpriteRenderer sr;
 
-        private void Start() => TryGetComponent(out playerRigidbody);
-
+        private void Start()
+        {
+            TryGetComponent(out playerRigidbody);
+            sr = GetComponent<SpriteRenderer>();
+        }
         private void Update()
         {
             Jump();
@@ -63,7 +67,7 @@ namespace Assets.Scripts.Player
         private void Flip()
         {
             facingRight = !facingRight;
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            sr.flipX = !sr.flipX;
         }
 
         private void OnDrawGizmosSelected()
