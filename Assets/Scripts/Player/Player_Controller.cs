@@ -85,7 +85,7 @@ namespace Assets.Scripts.Player
                 
                 playerRigidbody.velocity = new Vector2(0,0);
 
-                if (playerRigidbody.transform.localScale.x < 0)
+                if (sr.flipX == true)
                 {
                     playerRigidbody.AddForce(Vector2.left * strongImpulse);
                 }
