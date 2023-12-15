@@ -18,10 +18,10 @@ namespace Assets.Scripts.Player
         private bool _facingRight = true;
         private SpriteRenderer _sr;
 
-        private void Start()
+        private void Awake()
         {
             TryGetComponent(out _playerRigidbody);
-            _sr = GetComponent<SpriteRenderer>();
+           TryGetComponent(out _sr);
         }
         private void Update()
         {
