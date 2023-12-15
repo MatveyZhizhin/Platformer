@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Assets.Scripts.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Player_Controller : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float speed;
         [SerializeField] private float rayDistance;
