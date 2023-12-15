@@ -5,23 +5,23 @@ namespace Assets.Scripts.Player
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private float speed;
-        [SerializeField] private float rayDistance;
-        [SerializeField] private float jumpForce;
-        [SerializeField] private float strongImpulse = 6000;
-        [SerializeField] private LayerMask whatIsGround;
+        [SerializeField] private float _speed;
+        [SerializeField] private float _rayDistance;
+        [SerializeField] private float _jumpForce;
+        [SerializeField] private float _strongImpulse = 6000;
+        [SerializeField] private LayerMask _whatIsGround;
 
         private bool _lockDash = false;
 
-        private Rigidbody2D playerRigidbody;
+        private Rigidbody2D _playerRigidbody;
 
-        private bool facingRight = true;
-        private SpriteRenderer sr;
+        private bool _facingRight = true;
+        private SpriteRenderer _sr;
 
         private void Start()
         {
-            TryGetComponent(out playerRigidbody);
-            sr = GetComponent<SpriteRenderer>();
+            TryGetComponent(out _playerRigidbody);
+            _sr = GetComponent<SpriteRenderer>();
         }
         private void Update()
         {
@@ -39,41 +39,41 @@ namespace Assets.Scripts.Player
         {
             var moveInput = Input.GetAxis("Horizontal");           
            
-            if (!facingRight && moveInput > 0)
+            if (!_facingRight && moveInput > 0)
             {
                 Flip();
             }
-            else if (facingRight && moveInput < 0)
+            else if (_facingRight && moveInput < 0)
             {
                 Flip();
             }
 
-            playerRigidbody.velocity = new Vector2(moveInput * speed, playerRigidbody.velocity.y);
+            _playerRigidbody.velocity = new Vector2(moveInput * _speed, _playerRigidbody.velocity.y);
         }
 
         private void Jump()
         {
-            RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, rayDistance, whatIsGround);
+            RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, _rayDistance, _whatIsGround);
 
             if (hitInfo.collider != null)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                    _playerRigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
                 }              
             }
         }  
         
         private void Flip()
         {
-            facingRight = !facingRight;
-            sr.flipX = !sr.flipX;
+            _facingRight = !_facingRight;
+            _sr.flipX = !_sr.flipX;
         }
 
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawRay(transform.position, Vector2.down * rayDistance);
+            Gizmos.DrawRay(transform.position, Vector2.down * _rayDistance);
         }
 
         private void Dash()
@@ -83,15 +83,15 @@ namespace Assets.Scripts.Player
                 _lockDash = true;
                 Invoke("LockDash", 2f);
                 
-                playerRigidbody.velocity = new Vector2(0,0);
+                _playerRigidbody.velocity = new Vector2(0,0);
 
-                if (sr.flipX == true)
+                if (_sr.flipX == true)
                 {
-                    playerRigidbody.AddForce(Vector2.left * strongImpulse);
+                    _playerRigidbody.AddForce(Vector2.left * _strongImpulse);
                 }
                 else
                 {
-                    playerRigidbody.AddForce(Vector2.right * strongImpulse);
+                    _playerRigidbody.AddForce(Vector2.right * _strongImpulse);
                 }
             }
             
