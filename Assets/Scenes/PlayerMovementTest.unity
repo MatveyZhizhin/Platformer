@@ -155,11 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98c6cfc4e5066c4a993af3db673d1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  rayDistance: 1.38
-  jumpForce: 5
-  strongImpulse: 10000
-  whatIsGround:
+  _speed: 7
+  _rayDistance: 1.19
+  _jumpForce: 5
+  _strongImpulse: 6000
+  _whatIsGround:
     serializedVersion: 2
     m_Bits: 8
 --- !u!50 &515703521

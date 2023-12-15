@@ -21,7 +21,7 @@ namespace Assets.Scripts.Player
         private void Awake()
         {
             TryGetComponent(out _playerRigidbody);
-           TryGetComponent(out _sr);
+            TryGetComponent(out _sr);
         }
         private void Update()
         {
