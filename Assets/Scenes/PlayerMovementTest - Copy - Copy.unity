@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  rayDistance: 2.07
+  rayDistance: 1.64
   jumpForce: 5
   strongImpulse: 10000
   whatIsGround:
@@ -519,7 +519,7 @@ MonoBehaviour:
   damage: 30
   enemy:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   attackRange: 1
   anim: {fileID: 515703525}
 --- !u!1 &642825988

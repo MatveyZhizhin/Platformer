@@ -6,7 +6,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float startTimeAttack;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private int damage;
-    [SerializeField] private LayerMask enemy;
     [SerializeField] private float attackRange;
     [SerializeField] private Animator anim;
     
@@ -17,10 +16,13 @@ public class PlayerAttack : MonoBehaviour
             if(Input.GetMouseButton(0))
             {
                 anim.SetTrigger("attack");
-                Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemy);
+                Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
                 foreach(Collider2D enemy in enemies)
                 {
-                    enemy.GetComponent<Enemy>().TakeDamage(damage);
+                    if (enemy.TryGetComponent(out Health health))
+                    {
+                        health.TakeDamage(damage);
+                    }
                 }
                 timeAttack = startTimeAttack;
             }
