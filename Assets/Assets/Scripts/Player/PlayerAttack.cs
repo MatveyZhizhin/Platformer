@@ -24,9 +24,9 @@ public class PlayerAttack : MonoBehaviour
                 {
                     enemy.GetComponent<Enemy>().TakeDamage(damage);
                 }
-                
+                timeAttack = startTimeAttack;
             }
-            timeAttack = startTimeAttack;
+            
         }
         else
         {
