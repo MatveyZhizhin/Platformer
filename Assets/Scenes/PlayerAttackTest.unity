@@ -154,8 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cd30053402f6f408c5b31152411ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  maxHp: 100
+  _maxHp: 60
 --- !u!61 &338322086
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -314,7 +313,8 @@ GameObject:
   - component: {fileID: 515703525}
   - component: {fileID: 515703526}
   - component: {fileID: 515703527}
-  m_Layer: 0
+  - component: {fileID: 515703528}
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,11 +517,20 @@ MonoBehaviour:
   startTimeAttack: 0.5
   attackPoint: {fileID: 507134730}
   damage: 30
-  enemy:
-    serializedVersion: 2
-    m_Bits: 0
   attackRange: 1
-  anim: {fileID: 515703525}
+--- !u!114 &515703528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515703519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cd30053402f6f408c5b31152411ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 60
 --- !u!1 &642825988
 GameObject:
   m_ObjectHideFlags: 0
