@@ -514,10 +514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21c239bbcefb364d844fb085c3dd6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeAttack: 0.5
-  attackPoint: {fileID: 507134730}
-  damage: 30
-  attackRange: 1
+  _startTimeAttack: 0.5
+  _attackPoint: {fileID: 507134730}
+  _damage: 30
+  _attackRange: 1
   _layerToIgnore:
     serializedVersion: 2
     m_Bits: 64
