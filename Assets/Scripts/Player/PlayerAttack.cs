@@ -9,11 +9,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float _attackRange;
     [SerializeField] private LayerMask _layerToIgnore;
 
-    private Animator anim;
+    private Animator _anim;
 
     private void Awake()
     {
-        TryGetComponent(out anim);
+        TryGetComponent(out _anim);
     }
 
     private void Attack()
