@@ -10,11 +10,18 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private float _attackRange;
     [SerializeField] private Transform _attackPoint;
-    private EnemyMovement _trafficPermission;
+    [SerializeField] private LayerMask _enemy;
+    private EnemyMovement _enemyMovement;
+
+
+    private void Awake()
+    {
+        TryGetComponent(out _enemyMovement);
+    }
 
     private void Update()
     {
-        
+        Attack();   
     }
 
     private void Attack()
@@ -22,12 +29,12 @@ public class EnemyAttack : MonoBehaviour
         if(_attackDelay <= 0)
         {
 
-            Collider2D[] objects = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange);
+            Collider2D[] objects = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, ~_enemy);
                 foreach(Collider2D player in objects)
                 {
                     if (player.TryGetComponent(out Health health))
                     {
-                        _trafficPermission._trafficPermission = false;
+                        _enemyMovement._trafficPermission = false;
                         health.TakeDamage(_damage);
                     }
                 }
@@ -36,7 +43,12 @@ public class EnemyAttack : MonoBehaviour
         else
         {
             _attackDelay -= Time.deltaTime;
-            _trafficPermission._trafficPermission = true;
+            _enemyMovement._trafficPermission = true;
         }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(_attackPoint.position, _attackRange);
     }
 }
