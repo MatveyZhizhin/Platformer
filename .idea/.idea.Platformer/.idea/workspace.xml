@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f56869c-a860-45fd-ab20-7b88e9984709" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Platformer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Platformer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAttack.cs" afterDir="false" />
-    </list>
+    <list default="true" id="2f56869c-a860-45fd-ab20-7b88e9984709" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +81,7 @@
       <workItem from="1702731772950" duration="1498000" />
       <workItem from="1702733359861" duration="54000" />
       <workItem from="1702820697142" duration="3347000" />
-      <workItem from="1702841884454" duration="1187000" />
+      <workItem from="1702841884454" duration="1573000" />
     </task>
     <servers />
   </component>
