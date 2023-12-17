@@ -10,6 +10,7 @@
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Enemy" t="Include">
+            <e p="EnemyAttack.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
             <e p="Health.cs" t="Include" />
           </e>
