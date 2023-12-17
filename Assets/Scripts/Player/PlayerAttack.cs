@@ -34,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if(Input.GetMouseButton(0))
             {
-                anim.SetTrigger("attack");               
+                _anim.SetTrigger("attack");               
                 _timeAttack = _startTimeAttack;
             }
             
