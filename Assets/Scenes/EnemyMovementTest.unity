@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 338322085}
   - component: {fileID: 338322090}
   - component: {fileID: 338322089}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 515703526}
   - component: {fileID: 515703527}
   - component: {fileID: 515703528}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,10 +560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21c239bbcefb364d844fb085c3dd6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeAttack: 0.5
-  attackPoint: {fileID: 507134730}
-  damage: 5
-  attackRange: 1
+  _startTimeAttack: 0.5
+  _attackPoint: {fileID: 507134730}
+  _damage: 5
+  _attackRange: 1
   _layerToIgnore:
     serializedVersion: 2
     m_Bits: 64
