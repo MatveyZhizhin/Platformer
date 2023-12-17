@@ -518,7 +518,7 @@ MonoBehaviour:
   attackPoint: {fileID: 507134730}
   damage: 30
   attackRange: 1
-  _whatIsPlayer:
+  _layerToIgnore:
     serializedVersion: 2
     m_Bits: 64
 --- !u!114 &515703528
