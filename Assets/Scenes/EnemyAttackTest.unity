@@ -157,7 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cd30053402f6f408c5b31152411ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 15
   _maxHp: 15
 --- !u!61 &338322086
 BoxCollider2D:
@@ -583,7 +582,9 @@ MonoBehaviour:
   attackPoint: {fileID: 507134730}
   damage: 5
   attackRange: 1
-  anim: {fileID: 515703525}
+  _layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &515703528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,7 +597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cd30053402f6f408c5b31152411ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 10
   _maxHp: 10
 --- !u!1 &642825988
 GameObject:
